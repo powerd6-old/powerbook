@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('deserialization', () {
-    test('chapter without content items can be read from Json', () async {
+    test('chapter without content items can be read from JSON', () async {
       String jsonChapter = '{"title": "Introduction","contents": []}';
       Chapter expected = Chapter(title: "Introduction", contents: []);
 
@@ -14,7 +14,7 @@ void main() {
 
       expect(deserialized, equals(expected));
     });
-    test('chapter with content items can be read from Json', () async {
+    test('chapter with content items can be read from JSON', () async {
       String jsonMarkdownContent =
           '{"type":"markdown","filepath":"folder/file.md"}';
       MarkdownContent expectedMarkdownContent =
