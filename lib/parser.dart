@@ -10,9 +10,10 @@ class Parser {
 
   Parser({required this.fileSystem});
 
-  Book parseBook(String filePath) {
-    final fileContents = fileSystem.file(filePath).readAsStringSync();
+  Book parseBook(String bookFilePath) {
+    final fileContents = fileSystem.file(bookFilePath).readAsStringSync();
     final loadedDefinition = loadYaml(fileContents);
-    return Book.fromJson(jsonDecode(jsonEncode(loadedDefinition)));
+    final parsedBook = Book.fromJson(jsonDecode(jsonEncode(loadedDefinition)));
+    return parsedBook;
   }
 }
