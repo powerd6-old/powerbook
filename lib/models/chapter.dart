@@ -10,7 +10,7 @@ class Chapter {
   Chapter.fromJson(Map<String, dynamic> json)
       : title = json['title'],
         contents = (json['contents'] as List<dynamic>)
-            .map((e) => ContentMapper.map(e as Map<String, dynamic>))
+            .map((e) => ContentMapper.fromJson(e as Map<String, dynamic>))
             .toList();
 
   Map<String, dynamic> toJson() {

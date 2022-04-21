@@ -19,7 +19,7 @@ abstract class Content {
 }
 
 class ContentMapper {
-  static Content map(Map<String, dynamic> dynamicContent) {
+  static Content fromJson(Map<String, dynamic> dynamicContent) {
     switch (dynamicContent['type']) {
       case 'markdown':
         return MarkdownContent.fromJson(dynamicContent);
