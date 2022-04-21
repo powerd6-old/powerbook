@@ -1,7 +1,7 @@
 import 'package:powerbook/models/author.dart';
 import 'package:powerbook/views.dart';
 
-/// Mean to be used in the <head> section of the book
+/// Meant to be used in the <head> section of the book
 class AuthorMeta extends View<Author> {
   AuthorMeta({required Author model}) : super(model: model);
 
