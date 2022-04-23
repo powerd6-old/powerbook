@@ -1,5 +1,5 @@
 export 'content/markdown_content.dart' show MarkdownContent;
-export 'content/template_content.dart' show TemplateContent;
+export 'content/template_content.dart' show TemplateContent, Template;
 
 import 'package:powerbook/models/content/markdown_content.dart';
 import 'package:powerbook/models/content/template_content.dart';

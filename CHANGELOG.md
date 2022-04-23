@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Add `Template` class to support `TemplateContent` extensions
+
 ## 0.0.2
 
 - Remove non-library code.

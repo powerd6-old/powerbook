@@ -31,3 +31,11 @@ class TemplateContent extends Content {
   @override
   int get hashCode => template.hashCode + data.hashCode;
 }
+
+abstract class Template<T> {
+  final List<T> data;
+
+  Template({required this.data});
+
+  String renderHtml();
+}
