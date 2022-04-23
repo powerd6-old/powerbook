@@ -1,4 +1,4 @@
-export 'views/author.dart' show AuthorMeta, AuthorList;
+export 'views/author.dart' show AuthorViewMeta, AuthorViewList;
 
 abstract class View<T> {
   final T model;

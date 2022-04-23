@@ -2,8 +2,8 @@ import 'package:powerbook/models/author.dart';
 import 'package:powerbook/views.dart';
 
 /// Meant to be used in the <head> section of the book
-class AuthorMeta extends View<Author> {
-  AuthorMeta({required Author model}) : super(model: model);
+class AuthorViewMeta extends View<Author> {
+  AuthorViewMeta({required Author model}) : super(model: model);
 
   @override
   String renderHtml() {
@@ -12,8 +12,8 @@ class AuthorMeta extends View<Author> {
 }
 
 /// Represents a single Author
-class AuthorItem extends View<Author> {
-  AuthorItem({required Author model}) : super(model: model);
+class AuthorViewItem extends View<Author> {
+  AuthorViewItem({required Author model}) : super(model: model);
 
   @override
   String renderHtml() {
@@ -29,13 +29,13 @@ class AuthorItem extends View<Author> {
 }
 
 /// Represents a list of authors
-class AuthorList extends View<List<Author>> {
-  AuthorList({required List<Author> model}) : super(model: model);
+class AuthorViewList extends View<List<Author>> {
+  AuthorViewList({required List<Author> model}) : super(model: model);
 
   @override
   String renderHtml() {
     return '''<ul>
-      ${model.map((e) => AuthorItem(model: e).renderHtml()).join('')}
+      ${model.map((e) => AuthorViewItem(model: e).renderHtml()).join('')}
     </ul>''';
   }
 }
