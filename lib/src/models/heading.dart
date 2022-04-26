@@ -27,7 +27,7 @@ class Heading with Renderable, Indexable {
     return """
       <header>
         <h$headingLevel>$title</h$headingLevel>
-        ${subtitle?.split('\n').map((e) => '<p>$e</p>').join('\n')}
+        ${subtitle != null ? subtitle?.split('\n').map((e) => '<p>$e</p>').join('\n') : ""}
       </header>
 """;
   }

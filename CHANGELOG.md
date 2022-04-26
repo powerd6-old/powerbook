@@ -1,3 +1,7 @@
+## 0.1.2
+
+- Fix `Heading` showing `null` when there are no subtitles
+
 ## 0.1.1
 
 - Make `Content` non-`Indexable` by default.
