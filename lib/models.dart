@@ -1,6 +1,7 @@
-export 'models/author.dart' show Author;
-export 'models/book.dart' show Book;
-export 'models/chapter.dart' show Chapter;
-export 'models/content.dart' show Content, ContentMapper;
-export 'models/content.dart' show MarkdownContent;
-export 'models/content.dart' show TemplateContent, Template;
+export 'src/models/author.dart' show Author;
+export 'src/models/book.dart' show Book;
+export 'src/models/chapter.dart' show Chapter;
+export 'src/models/chapter_list.dart' show ChapterList;
+export 'src/models/content.dart' show Content;
+export 'src/models/heading.dart' show Heading;
+export 'src/models/index.dart' show Index;

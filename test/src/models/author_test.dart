@@ -1,4 +1,4 @@
-import 'package:powerbook/models/author.dart';
+import 'package:powerbook/src/models/author.dart';
 import 'package:test/test.dart';
 
 void main() {
