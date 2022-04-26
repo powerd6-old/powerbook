@@ -1,3 +1,8 @@
+## 0.1.1
+
+- Make `Content` non-`Indexable` by default.
+- Remove unused `type` property from `Content`
+
 ## 0.1.0
 
 - Move library away from json concept and implement functionality for pure dart manipulation.

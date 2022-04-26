@@ -41,7 +41,7 @@ class Chapter with Renderable, Indexable {
 
   @override
   List<Indexable> getChildren() {
-    return contents;
+    return contents.whereType<Indexable>().toList();
   }
 
   @override
