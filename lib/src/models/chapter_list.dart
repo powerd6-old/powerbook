@@ -47,6 +47,11 @@ class ChapterList with Renderable, Indexable {
   }
 
   @override
+  List<Indexable> getChildren() {
+    return chapters.whereType<Indexable>().toList();
+  }
+
+  @override
   String toHtml() {
     return """
       <section id="${getId()}">

@@ -1,3 +1,7 @@
+## 0.1.3
+
+- Fix `ContentList` not returning the inner contents to the `Index`
+ 
 ## 0.1.2
 
 - Fix `Heading` showing `null` when there are no subtitles
