@@ -1,3 +1,7 @@
+## 0.1.4
+
+- Fix `Index` to use nested list for child items
+
 ## 0.1.3
 
 - Fix `ContentList` not returning the inner contents to the `Index`

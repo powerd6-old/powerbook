@@ -21,7 +21,7 @@ class Index with Renderable {
     return """
   <li>
     <a href="#${e.getId()}">${e.getTitle()}</a>
-    ${e.getChildren().map((e) => getListItem(e)).join('\n')}
+    ${e.getChildren() != [] ? "<ul>${e.getChildren().map((e) => getListItem(e)).join('\n')}</ul>" : ""}
   </li>
 """;
   }
