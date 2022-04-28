@@ -1,3 +1,7 @@
+## 0.1.5
+
+- Create `Reference` to allow linking to be handled without hard-coding
+
 ## 0.1.4
 
 - Fix `Index` to use nested list for child items
