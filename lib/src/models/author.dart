@@ -1,4 +1,5 @@
 import 'package:powerbook/mixins.dart';
+import 'package:powerbook/models.dart';
 import 'package:slugify/slugify.dart';
 
 /// An author, with email and optionally a twitter.
@@ -22,27 +23,15 @@ class Author with Renderable {
   @override
   String toHtml() {
     String twitterPartial = twitter != null
-        ? """
-      <a
-        href="https://twitter.com/$twitter"
-        target=_blank
-        rel="author"
-      >
-        @$twitter
-      </a>
-"""
+        ? Reference.external(
+                text: "@$twitter", link: "https://twitter.com/$twitter")
+            .toHtml()
         : "";
     return """
       <article id="author-${slugify(email)}">
         <h1>$name</h1>
         <h2>
-          <a
-            href="mailto:$email"
-            target=_blank
-            rel="author"
-          >
-            $email
-          </a>
+          ${Reference.external(text: email, link: "mailto:$email")}
         </h2>$twitterPartial
       </article>
 """;

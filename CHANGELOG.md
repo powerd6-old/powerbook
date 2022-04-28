@@ -1,3 +1,7 @@
+## 0.1.6
+
+- Use `Reference` throughout the library
+
 ## 0.1.5
 
 - Create `Reference` to allow linking to be handled without hard-coding

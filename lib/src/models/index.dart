@@ -1,4 +1,5 @@
 import 'package:powerbook/mixins.dart';
+import 'package:powerbook/src/models/reference.dart';
 
 /// A index that links to all `Indexable` elements provided to it.
 class Index with Renderable {
@@ -20,7 +21,7 @@ class Index with Renderable {
   getListItem(Indexable e) {
     return """
   <li>
-    <a href="#${e.getId()}">${e.getTitle()}</a>
+    ${Reference(link: "#${e.getId()}", text: e.getTitle()).toHtml()}
     ${e.getChildren() != [] ? "<ul>${e.getChildren().map((e) => getListItem(e)).join('\n')}</ul>" : ""}
   </li>
 """;
