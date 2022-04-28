@@ -1,3 +1,8 @@
+## 0.1.7
+
+- Document API better
+- Create a `internal` `Reference` constructor
+
 ## 0.1.6
 
 - Use `Reference` throughout the library

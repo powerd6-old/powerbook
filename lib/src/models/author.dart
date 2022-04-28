@@ -2,7 +2,7 @@ import 'package:powerbook/mixins.dart';
 import 'package:powerbook/models.dart';
 import 'package:slugify/slugify.dart';
 
-/// An author, with email and optionally a twitter.
+/// An author, with email and optionally a twitter handle.
 ///
 /// Authors are uniquely identified by their **email**.
 class Author with Renderable {

@@ -1,3 +1,4 @@
+/// An element that should be taken into account when building an `Index` of a `Book`
 mixin Indexable {
   /// The title with which to refer to the element as
   String getTitle();

@@ -21,7 +21,7 @@ class Index with Renderable {
   getListItem(Indexable e) {
     return """
   <li>
-    ${Reference(link: "#${e.getId()}", text: e.getTitle()).toHtml()}
+    ${Reference.internal(link: e.getId(), text: e.getTitle()).toHtml()}
     ${e.getChildren() != [] ? "<ul>${e.getChildren().map((e) => getListItem(e)).join('\n')}</ul>" : ""}
   </li>
 """;
