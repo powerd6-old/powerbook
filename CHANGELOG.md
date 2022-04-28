@@ -1,3 +1,8 @@
+## 0.2.0
+
+- Create `HeadedContent`
+- Create markdown `Content` and `HeadedContent`
+
 ## 0.1.7
 
 - Document API better
