@@ -1,3 +1,7 @@
+## 0.2.2
+
+- Fix rendering of `Author`'s `Reference`
+
 ## 0.2.1
 
 - Expose changes from 0.2.0

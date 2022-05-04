@@ -31,7 +31,7 @@ class Author with Renderable {
       <article id="author-${slugify(email)}">
         <h1>$name</h1>
         <h2>
-          ${Reference.external(text: email, link: "mailto:$email")}
+          ${Reference.external(text: email, link: "mailto:$email").toHtml()}
         </h2>$twitterPartial
       </article>
 """;
