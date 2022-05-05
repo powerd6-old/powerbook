@@ -1,6 +1,7 @@
 # @powerd6/powerbook
 
-[![Tests](https://github.com/powerd6/powerbook/actions/workflows/test.yml/badge.svg)](https://github.com/powerd6/powerbook/actions/workflows/test.yml)
+[![test](https://github.com/powerd6/powerbook/actions/workflows/test.yml/badge.svg)](https://github.com/powerd6/powerbook/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/powerd6/powerbook/branch/main/graph/badge.svg?token=IBQX6JC4Y9)](https://codecov.io/gh/powerd6/powerbook)
 
 Tooling to combine and render [powerd6](https://github.com/powerd6) books.
 
