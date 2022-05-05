@@ -21,7 +21,7 @@ void main() {
       String actual =
           Book(heading: heading, authors: [], chapters: chapterList).toHtml();
       String expected =
-          '<main><h1>Heading</h1><section id="authors"><header><h1>Authors</h1></header></section><section id="index"><ul><li><a href="#mock-id" target="_self">Mocked Chapter List</a></li></ul></section><section>ChapterList</section>null</main>';
+          '<main><h1>Heading</h1><section id="authors"><header id="authors"><h1>Authors</h1></header></section><section id="index"><ul><li><a href="#mock-id" target="_self">Mocked Chapter List</a></li></ul></section><section>ChapterList</section>null</main>';
 
       expect(actual, equals(expected));
     });
@@ -33,7 +33,7 @@ void main() {
               appendices: chapterList)
           .toHtml();
       String expected =
-          '<main><h1>Heading</h1><section id="authors"><header><h1>Authors</h1></header></section><section id="index"><ul><li><a href="#mock-id" target="_self">Mocked Chapter List</a></li><li><a href="#mock-id" target="_self">Mocked Chapter List</a></li></ul></section><section>ChapterList</section><section>ChapterList</section></main>';
+          '<main><h1>Heading</h1><section id="authors"><header id="authors"><h1>Authors</h1></header></section><section id="index"><ul><li><a href="#mock-id" target="_self">Mocked Chapter List</a></li><li><a href="#mock-id" target="_self">Mocked Chapter List</a></li></ul></section><section>ChapterList</section><section>ChapterList</section></main>';
 
       expect(actual, equals(expected));
     });

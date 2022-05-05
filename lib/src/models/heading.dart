@@ -24,7 +24,7 @@ class Heading with Renderable, Indexable {
 
   @override
   String toHtml() {
-    return '<header>'
+    return '<header id="${getId()}">'
         '<h$headingLevel>$title</h$headingLevel>'
         '${subtitle != null ? subtitle?.split('\n').map((e) => '<p>$e</p>').join() : ""}'
         '</header>';
