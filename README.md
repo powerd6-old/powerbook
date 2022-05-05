@@ -1,5 +1,7 @@
 # @powerd6/powerbook
 
+[![Tests](https://github.com/powerd6/powerbook/actions/workflows/test.yml/badge.svg)](https://github.com/powerd6/powerbook/actions/workflows/test.yml)
+
 Tooling to combine and render [powerd6](https://github.com/powerd6) books.
 
 This package contains the data structures and formats required to write a powerd6 book.
