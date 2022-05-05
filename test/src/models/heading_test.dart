@@ -13,4 +13,27 @@ void main() {
         equals(
             4)); // None of the elements must equal any other in order for the Set to have all elements.
   });
+  group('rendering', () {
+    const title = "Title";
+    const subtitle = "Subtitle";
+
+    test('headings without subtitle are rendered correctly', () {
+      String actual = Heading(title: title).toHtml();
+      String expected = '<header><h1>Title</h1></header>';
+
+      expect(actual, equals(expected));
+    });
+    test('headings with subtitle are rendered correctly', () {
+      String actual = Heading(title: title, subtitle: subtitle).toHtml();
+      String expected = '<header><h1>Title</h1><p>Subtitle</p></header>';
+
+      expect(actual, equals(expected));
+    });
+    test('headings with custom heading levels are rendered correctly', () {
+      String actual = Heading(title: title, headingLevel: 3).toHtml();
+      String expected = '<header><h3>Title</h3></header>';
+
+      expect(actual, equals(expected));
+    });
+  });
 }

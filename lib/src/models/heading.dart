@@ -24,12 +24,10 @@ class Heading with Renderable, Indexable {
 
   @override
   String toHtml() {
-    return """
-      <header>
-        <h$headingLevel>$title</h$headingLevel>
-        ${subtitle != null ? subtitle?.split('\n').map((e) => '<p>$e</p>').join('\n') : ""}
-      </header>
-""";
+    return '<header>'
+        '<h$headingLevel>$title</h$headingLevel>'
+        '${subtitle != null ? subtitle?.split('\n').map((e) => '<p>$e</p>').join('\n') : ""}'
+        '</header>';
   }
 
   @override

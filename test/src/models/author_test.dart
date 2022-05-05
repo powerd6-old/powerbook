@@ -16,4 +16,25 @@ void main() {
     expect(firstAuthor, equals(firstAuthorWithDifferentName));
     expect(firstAuthor, isNot(equals(secondAuthor)));
   });
+
+  group('rendering', () {
+    const name = "John Smith";
+    const email = "john@example.com";
+    const twitter = "JohnSmith";
+    test('author without twitter is rendered correctly', () {
+      String actual = Author(name: name, email: email).toHtml();
+      String expected =
+          '<article id="author-johnatexamplecom"><h1>John Smith</h1><h2><a href="mailto:john@example.com" target="_blank">john@example.com</a></h2></article>';
+
+      expect(actual, equals(expected));
+    });
+    test('author with a twitter is rendered correctly', () {
+      String actual =
+          Author(name: name, email: email, twitter: twitter).toHtml();
+      String expected =
+          '<article id="author-johnatexamplecom"><h1>John Smith</h1><h2><a href="mailto:john@example.com" target="_blank">john@example.com</a></h2><a href="https://twitter.com/JohnSmith" target="_blank">@JohnSmith</a></article>';
+
+      expect(actual, equals(expected));
+    });
+  });
 }

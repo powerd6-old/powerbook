@@ -1,3 +1,8 @@
+## 0.3.0
+
+- Remove `Headed` and `HeadedContent` and all children
+- Add tests for serialization to validate HTML generation besides "visual inspection"
+
 ## 0.2.2
 
 - Fix rendering of `Author`'s `Reference`

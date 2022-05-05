@@ -27,13 +27,10 @@ class Author with Renderable {
                 text: "@$twitter", link: "https://twitter.com/$twitter")
             .toHtml()
         : "";
-    return """
-      <article id="author-${slugify(email)}">
-        <h1>$name</h1>
-        <h2>
-          ${Reference.external(text: email, link: "mailto:$email").toHtml()}
-        </h2>$twitterPartial
-      </article>
-""";
+    return '<article id="author-${slugify(email)}">'
+        '<h1>$name</h1>'
+        '<h2>${Reference.external(text: email, link: "mailto:$email").toHtml()}</h2>'
+        '$twitterPartial'
+        '</article>';
   }
 }

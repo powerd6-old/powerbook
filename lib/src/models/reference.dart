@@ -19,10 +19,6 @@ class Reference extends Content {
 
   @override
   String toHtml() {
-    return """
-      <a href="$link" target="$target">
-        $text
-      </a>
-""";
+    return '<a href="$link" target="$target">' '$text' '</a>';
   }
 }
