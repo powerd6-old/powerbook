@@ -26,7 +26,7 @@ class Heading with Renderable, Indexable {
   String toHtml() {
     return '<header>'
         '<h$headingLevel>$title</h$headingLevel>'
-        '${subtitle != null ? subtitle?.split('\n').map((e) => '<p>$e</p>').join('\n') : ""}'
+        '${subtitle != null ? subtitle?.split('\n').map((e) => '<p>$e</p>').join() : ""}'
         '</header>';
   }
 

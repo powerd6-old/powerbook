@@ -7,3 +7,7 @@ pubspec.lock
 
 # Conventional directory for build output.
 build/
+
+# Code coverage directory
+coverage/
+coverage.lcov

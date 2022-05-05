@@ -13,8 +13,10 @@ void main() {
     Author secondAuthor = Author(name: "Mary Jane", email: "mary@example.com");
 
     expect(firstAuthor, equals(copyOfFirstAuthor));
+    expect(firstAuthor.hashCode, equals(copyOfFirstAuthor.hashCode));
     expect(firstAuthor, equals(firstAuthorWithDifferentName));
     expect(firstAuthor, isNot(equals(secondAuthor)));
+    expect(firstAuthor.hashCode, isNot(equals(secondAuthor.hashCode)));
   });
 
   group('rendering', () {

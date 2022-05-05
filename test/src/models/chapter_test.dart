@@ -1,8 +1,7 @@
 import 'package:collection/collection.dart';
+import 'package:mocktail/mocktail.dart';
 import 'package:powerbook/models.dart';
 import 'package:test/test.dart';
-
-import '../../mocks/mock_content.dart';
 
 void main() {
   test(
@@ -39,3 +38,5 @@ void main() {
         equals(true));
   });
 }
+
+class MockContent extends Mock implements Content {}

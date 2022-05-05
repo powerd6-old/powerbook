@@ -53,12 +53,10 @@ class ChapterList with Renderable, Indexable {
 
   @override
   String toHtml() {
-    return """
-      <section id="${getId()}">
-        ${heading.toHtml()}
-        ${chapters.map((e) => e.toHtml()).join('\n')}
-      </section>
-""";
+    return '<section id="${getId()}">'
+        '${heading.toHtml()}'
+        '${chapters.map((e) => e.toHtml()).join()}'
+        '</section>';
   }
 
   @override

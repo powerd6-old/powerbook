@@ -45,23 +45,25 @@ class Book with Renderable, Indexable {
 
   @override
   String toHtml() {
-    return """
-      <main>
-        ${heading.toHtml()}
-        <section id="authors">
-          ${Heading(title: "Authors").toHtml()}
-          ${authors.map((e) => e.toHtml()).join('\n')}
-        </section>
-        ${Index(elements: getChildren()).toHtml()}
-        ${chapters.toHtml()}
-        ${appendices?.toHtml()}
-      </main>
-""";
+    return '<main>'
+        '${heading.toHtml()}'
+        '<section id="authors">'
+        '${Heading(title: "Authors").toHtml()}'
+        '${authors.map((e) => e.toHtml()).join()}'
+        '</section>'
+        '${Index(elements: getChildren()).toHtml()}'
+        '${chapters.toHtml()}'
+        '${appendices?.toHtml()}'
+        '</main>';
   }
 
   @override
   List<Indexable> getChildren() {
-    return List.of([chapters, appendices!]);
+    if (appendices != null) {
+      return List.of([chapters, appendices!]);
+    } else {
+      return [chapters];
+    }
   }
 
   @override

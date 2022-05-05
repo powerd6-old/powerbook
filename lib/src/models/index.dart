@@ -9,21 +9,17 @@ class Index with Renderable {
 
   @override
   String toHtml() {
-    return """
-      <section id="index">
-        <ul>
-          ${elements.map((e) => getListItem(e)).join('\n')}
-        </ul>
-      </section>
-""";
+    return elements.isEmpty
+        ? ''
+        : '<section id="index">'
+            '<ul>${elements.map((e) => getListItem(e)).join()}</ul>'
+            '</section>';
   }
 
   getListItem(Indexable e) {
-    return """
-  <li>
-    ${Reference.internal(link: e.getId(), text: e.getTitle()).toHtml()}
-    ${e.getChildren() != [] ? "<ul>${e.getChildren().map((e) => getListItem(e)).join('\n')}</ul>" : ""}
-  </li>
-""";
+    return '<li>'
+        '${Reference.internal(link: e.getId(), text: e.getTitle()).toHtml()}'
+        '${e.getChildren().isEmpty ? "" : "<ul>${e.getChildren().map((e) => getListItem(e)).join()}</ul>"}'
+        '</li>';
   }
 }
