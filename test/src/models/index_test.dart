@@ -1,7 +1,8 @@
 import 'package:mocktail/mocktail.dart';
-import 'package:powerbook/mixins.dart';
 import 'package:powerbook/models.dart';
 import 'package:test/test.dart';
+
+import '../../mocks.dart';
 
 void main() {
   group('rendering', () {
@@ -41,5 +42,3 @@ void main() {
     });
   });
 }
-
-class MockIndexable extends Mock implements Indexable {}

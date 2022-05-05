@@ -3,6 +3,8 @@ import 'package:mocktail/mocktail.dart';
 import 'package:powerbook/models.dart';
 import 'package:test/test.dart';
 
+import '../../mocks.dart';
+
 void main() {
   test(
       'chapters are considered the same if they have the same title and contents',
@@ -37,6 +39,28 @@ void main() {
             .equals(mergedChapter.contents, [firstContent, secondContent]),
         equals(true));
   });
-}
+  group('rendering', () {
+    final heading = MockHeading();
+    when(() => heading.toHtml()).thenReturn("<h1>Heading</h1>");
+    when(() => heading.getId()).thenReturn("heading");
+    when(() => heading.getTitle()).thenReturn("Heading");
 
-class MockContent extends Mock implements Content {}
+    final content = MockContent();
+    when(() => content.toHtml()).thenReturn("<p>content</p>");
+
+    test('chapter without content can be rendered', () async {
+      String actual = Chapter(heading: heading, contents: []).toHtml();
+      String expected = '<article id="heading"><h1>Heading</h1></article>';
+
+      expect(actual, equals(expected));
+    });
+
+    test('chapter without content can be rendered', () async {
+      String actual = Chapter(heading: heading, contents: [content]).toHtml();
+      String expected =
+          '<article id="heading"><h1>Heading</h1><p>content</p></article>';
+
+      expect(actual, equals(expected));
+    });
+  });
+}

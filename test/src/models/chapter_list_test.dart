@@ -2,6 +2,8 @@ import 'package:mocktail/mocktail.dart';
 import 'package:powerbook/models.dart';
 import 'package:test/test.dart';
 
+import '../../mocks.dart';
+
 void main() {
   test('chapter lists can be merged', () async {
     Heading sharedChapterHeadings = Heading(title: "Introduction");
@@ -51,9 +53,3 @@ void main() {
     });
   });
 }
-
-class MockContent extends Mock implements Content {}
-
-class MockChapter extends Mock implements Chapter {}
-
-class MockHeading extends Mock implements Heading {}

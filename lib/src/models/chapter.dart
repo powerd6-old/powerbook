@@ -44,7 +44,7 @@ class Chapter with Renderable, Indexable {
 
   @override
   String getId() {
-    return slugify(heading.title);
+    return slugify(heading.getTitle());
   }
 
   @override

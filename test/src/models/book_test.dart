@@ -2,6 +2,8 @@ import 'package:mocktail/mocktail.dart';
 import 'package:powerbook/models.dart';
 import 'package:test/test.dart';
 
+import '../../mocks.dart';
+
 void main() {
   group('rendering', () {
     final heading = MockHeading();
@@ -37,9 +39,3 @@ void main() {
     });
   });
 }
-
-class MockHeading extends Mock implements Heading {}
-
-class MockChapter extends Mock implements Chapter {}
-
-class MockChapterList extends Mock implements ChapterList {}
