@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security -->
 
+## 0.3.2
+
+- Make `MarkdownContent` render without extra line breaks
+
 ## 0.3.1
 
 - Fix `Heading` to have an `id`

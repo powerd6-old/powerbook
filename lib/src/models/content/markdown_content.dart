@@ -9,6 +9,6 @@ class MarkdownContent extends Content {
 
   @override
   String toHtml() {
-    return markdownToHtml(markdown);
+    return markdownToHtml(markdown).replaceAll(RegExp(r"(\n+)"), "");
   }
 }
