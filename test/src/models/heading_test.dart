@@ -6,7 +6,7 @@ void main() {
     Heading heading1 = Heading(title: "First Title");
     Heading heading2 = Heading(title: "Second Title");
     Heading heading3 = Heading(title: "First Title", subtitle: "An Extension");
-    Heading heading4 = Heading(title: "First Title");
+    Heading heading4 = Heading(title: "First Title", headingLevel: 2);
 
     expect(
         {heading1, heading2, heading3, heading4}.length,
@@ -31,7 +31,7 @@ void main() {
       expect(actual, equals(expected));
     });
     test('headings with custom heading levels are rendered correctly', () {
-      String actual = Heading(title: title).toHtml();
+      String actual = Heading(title: title, headingLevel: 3).toHtml();
       String expected = '<header id="title"><h3>Title</h3></header>';
 
       expect(actual, equals(expected));
