@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security -->
 
+## 0.3.4
+
+- Isolate `Content` in `<section>` when rendering a `Chapter`
+
 ## 0.3.3
 
 - Fix failing tests

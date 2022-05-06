@@ -33,7 +33,7 @@ class Chapter with Renderable, Indexable {
   String toHtml() {
     return '<article id="${getId()}">'
         '${heading.toHtml()}'
-        '${contents.map((e) => e.toHtml()).join()}'
+        '${contents.map((e) => '<section' '${e is Indexable ? ' id="${(e as Indexable).getId()}"' : ''}' '>${e.toHtml()}</section>').join()}'
         '</article>';
   }
 

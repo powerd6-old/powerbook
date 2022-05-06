@@ -48,6 +48,10 @@ void main() {
     final content = MockContent();
     when(() => content.toHtml()).thenReturn("<p>content</p>");
 
+    final indexableContent = MockIndexableContent();
+    when(() => indexableContent.getId()).thenReturn("content-id");
+    when(() => indexableContent.toHtml()).thenReturn("<p>content</p>");
+
     test('chapter without content can be rendered', () async {
       String actual = Chapter(heading: heading, contents: []).toHtml();
       String expected = '<article id="heading"><h1>Heading</h1></article>';
@@ -55,10 +59,19 @@ void main() {
       expect(actual, equals(expected));
     });
 
-    test('chapter without content can be rendered', () async {
+    test('chapter with content can be rendered', () async {
       String actual = Chapter(heading: heading, contents: [content]).toHtml();
       String expected =
-          '<article id="heading"><h1>Heading</h1><p>content</p></article>';
+          '<article id="heading"><h1>Heading</h1><section><p>content</p></section></article>';
+
+      expect(actual, equals(expected));
+    });
+
+    test('chapter with indexable content can be rendered', () async {
+      String actual =
+          Chapter(heading: heading, contents: [indexableContent]).toHtml();
+      String expected =
+          '<article id="heading"><h1>Heading</h1><section id="content-id"><p>content</p></section></article>';
 
       expect(actual, equals(expected));
     });

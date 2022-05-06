@@ -12,6 +12,8 @@ class MockChapter extends Mock implements Chapter {}
 
 class MockContent extends Mock implements Content {}
 
+class MockIndexableContent extends Mock with Indexable implements Content {}
+
 class MockHeading extends Mock implements Heading {}
 
 class MockIndex extends Mock implements Index {}
