@@ -11,3 +11,6 @@ build/
 # Code coverage directory
 coverage/
 coverage.lcov
+
+# Documentation
+doc/
