@@ -1,4 +1,6 @@
 import 'package:powerbook/mixins.dart';
+import 'package:powerbook/src/extensions/paragraph.dart';
+import 'package:powerd6/models.dart';
 import 'package:slugify/slugify.dart';
 
 /// A heading with a title and optional subtitle.
@@ -6,7 +8,7 @@ import 'package:slugify/slugify.dart';
 /// `Heading` can leverage different `headingLevel`s to represent hierarchy.
 class Heading with Renderable, Indexable {
   final String title;
-  final String? subtitle;
+  final Paragraph? subtitle;
   final int headingLevel;
 
   Heading({required this.title, this.subtitle, this.headingLevel = 1});
@@ -26,7 +28,7 @@ class Heading with Renderable, Indexable {
   String toHtml() {
     return '<header id="${getId()}">'
         '<h$headingLevel>$title</h$headingLevel>'
-        '${subtitle != null ? subtitle?.split('\n').map((e) => '<p>$e</p>').join() : ""}'
+        '${subtitle != null ? subtitle!.toHtml() : ""}'
         '</header>';
   }
 
