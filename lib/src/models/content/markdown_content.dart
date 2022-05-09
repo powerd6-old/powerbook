@@ -24,11 +24,17 @@ class IndexableMarkdownContent extends MarkdownContent with Indexable {
 
   @override
   String getId() {
+    if (headings.isEmpty) {
+      toHtml(); // Hack to force `CollectHeadersForIndexable` to run.
+    }
     return headings.first.getId();
   }
 
   @override
   String getTitle() {
+    if (headings.isEmpty) {
+      toHtml(); // Hack to force `CollectHeadersForIndexable` to run.
+    }
     return headings.first.getTitle();
   }
 

@@ -19,6 +19,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [1.0.3] - 2022-05-09
+
+### Fixed
+
+- `IndexableMarkdownContent` can run methods from `Indexable` before `toHtml()` is called.
+
+
 ## [1.0.2] - 2022-05-09
 
 ### Added

@@ -64,8 +64,17 @@ This is a paragraph
         String expected =
             '<header id="test-1"><h1>Test 1</h1></header><header id="test-2"><h2>Test 2</h2></header><header id="test-3"><h3>Test 3</h3></header>';
 
+        expect(indexableMarkdownContent.getTitle(), equals('Test 1'));
         expect(actual, equals(expected));
         expect(indexableMarkdownContent.getChildren().length, equals(2));
+      });
+      test(
+          'markdown headers are indexed even when toHtml is not explicitly called',
+          () {
+        var indexableMarkdownContent = IndexableMarkdownContent(markdown: """
+# Test 1
+""");
+        expect(indexableMarkdownContent.getTitle(), equals('Test 1'));
       });
     });
   });
