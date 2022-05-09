@@ -19,6 +19,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [1.0.1] - 2022-05-09
+
+### Added
+
+- `FocusModel` now provides the associated `Attribute` to the `Focus`
+ 
+### Changed
+
+- `Reference` for `Focus` now mentions the associated `Attribute`
+- `MarkdownContent` will now render headers with `Heading`
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+
 ## [1.0.0] - 2022-05-08
 
 ### Added

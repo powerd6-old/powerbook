@@ -27,7 +27,9 @@ class Reference extends Content {
 
   /// An internal reference, linked to a `Focus`
   static forFocus(Focus focus) {
-    return Reference.internal(text: focus.name, link: focus.getId());
+    return Reference.internal(
+        text: "${focus.name}(${focus.getAssociatedAttribute().name})",
+        link: focus.getId());
   }
 
   @override

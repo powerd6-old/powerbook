@@ -12,7 +12,8 @@ void main() {
   test('reference can be created for a focus', () async {
     Reference createdReference = Reference.forFocus(Focuses.awareness);
 
-    String expected = '<a href="#focus-awareness" target="_self">Awareness</a>';
+    String expected =
+        '<a href="#focus-awareness" target="_self">Awareness(Perception)</a>';
     expect(createdReference.toHtml(), equals(expected));
   });
   group('rendering', () {
