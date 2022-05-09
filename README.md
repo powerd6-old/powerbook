@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/powerd6/powerbook/branch/main/graph/badge.svg?token=IBQX6JC4Y9)](https://codecov.io/gh/powerd6/powerbook)
 [![CodeScene Code Health](https://codescene.io/projects/25941/status-badges/code-health)](https://codescene.io/projects/25941)
 
-Tooling to combine and render [powerd6](https://github.com/powerd6) books.
+Tooling create [powerd6](https://github.com/powerd6) books, combine them and render them into webpages.
 
 This package contains the data structures and formats required to write a powerd6 book.
 

@@ -1,6 +1,6 @@
 name: powerbook
-description: Tooling to combine and render powerd6 books
-version: 1.0.1
+description: Tooling create powerd6 books, combine them and render them into webpages.
+version: 1.0.2
 homepage: https://github.com/powerd6/powerbook
 issue_tracker: https://github.com/powerd6/powerbook/issues
 

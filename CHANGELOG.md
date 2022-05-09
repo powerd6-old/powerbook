@@ -19,6 +19,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [1.0.2] - 2022-05-09
+
+### Added
+
+- `NestedIndexable` to transform a list of `Headings` into a chain of `Indexable`s.
+- `IndexableMarkdownContent`, a clone of `MarkdownContent`, but exposing all `Headings` generated as `Indexable`s.
+
+
 ## [1.0.1] - 2022-05-09
 
 ### Added
