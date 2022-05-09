@@ -30,14 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Reference` for `Focus` now mentions the associated `Attribute`
 - `MarkdownContent` will now render headers with `Heading`
 
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-
 
 ## [1.0.0] - 2022-05-08
 
@@ -50,14 +42,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Use built models inside the library
 
-### Deprecated
-
 ### Removed
 
 - Removed CLI tools and commands
 - Removed YAML file manipulation
-
-### Fixed
 
 ### Security
 
