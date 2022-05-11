@@ -19,6 +19,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [1.0.4] - 2022-05-09
+
+### Fixed
+
+- `IndexableMarkdownContent` now returns the correct list of children `Indexables`.
+
+
 ## [1.0.3] - 2022-05-09
 
 ### Fixed

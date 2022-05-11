@@ -1,6 +1,7 @@
 import 'package:markdown/markdown.dart';
 import 'package:powerbook/mixins.dart';
 import 'package:powerbook/models.dart';
+import 'package:powerbook/src/models/nested_indexable.dart';
 
 /// A `Content` type that returns the rendered results from a markdown string
 class MarkdownContent extends Content {
@@ -27,7 +28,7 @@ class IndexableMarkdownContent extends MarkdownContent with Indexable {
     if (headings.isEmpty) {
       toHtml(); // Hack to force `CollectHeadersForIndexable` to run.
     }
-    return headings.first.getId();
+    return NestedIndexable.from(headings).self.getId();
   }
 
   @override
@@ -35,12 +36,19 @@ class IndexableMarkdownContent extends MarkdownContent with Indexable {
     if (headings.isEmpty) {
       toHtml(); // Hack to force `CollectHeadersForIndexable` to run.
     }
-    return headings.first.getTitle();
+    return NestedIndexable.from(headings).self.getTitle();
   }
 
   @override
   List<Indexable> getChildren() {
-    return headings.sublist(1);
+    if (headings.isEmpty) {
+      toHtml(); // Hack to force `CollectHeadersForIndexable` to run.
+    }
+    if (headings.isEmpty || headings.length == 1) {
+      return [];
+    } else {
+      return NestedIndexable.from(headings).getChildren();
+    }
   }
 
   @override

@@ -31,7 +31,7 @@ class NestedIndexable with Indexable {
       headings = headings.sublist(1);
       List<List<Heading>> children = headings
           .splitBeforeIndexed((index, element) =>
-              element.headingLevel == firstHeading.headingLevel + 1)
+              element.headingLevel <= firstHeading.headingLevel + 1)
           .toList();
       return children.map(nestOrReturnElement).toList();
     }

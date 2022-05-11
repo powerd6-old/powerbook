@@ -66,7 +66,9 @@ This is a paragraph
 
         expect(indexableMarkdownContent.getTitle(), equals('Test 1'));
         expect(actual, equals(expected));
-        expect(indexableMarkdownContent.getChildren().length, equals(2));
+        expect(indexableMarkdownContent.getChildren().length, equals(1));
+        expect(indexableMarkdownContent.getChildren()[0].getChildren().length,
+            equals(1));
       });
       test(
           'markdown headers are indexed even when toHtml is not explicitly called',
@@ -75,6 +77,23 @@ This is a paragraph
 # Test 1
 """);
         expect(indexableMarkdownContent.getTitle(), equals('Test 1'));
+      });
+      test(
+          'markdown headers are indexed in the correct nesting even when levels are complex and sparse',
+          () {
+        var indexableMarkdownContent = IndexableMarkdownContent(markdown: """
+# Test 1
+## Test 2
+#### Test 3
+## Test 4
+### Test 5
+# Test 6
+""");
+        expect(indexableMarkdownContent.getTitle(), equals('Test 1'));
+        expect(
+            Index(elements: indexableMarkdownContent.getChildren()).toHtml(),
+            equals(
+                '<section id="index"><ul><li><a href="#test-2" target="_self">Test 2</a><ul><li><a href="#test-3" target="_self">Test 3</a></li></ul></li><li><a href="#test-4" target="_self">Test 4</a><ul><li><a href="#test-5" target="_self">Test 5</a></li></ul></li><li><a href="#test-6" target="_self">Test 6</a></li></ul></section>'));
       });
     });
   });
