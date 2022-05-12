@@ -41,10 +41,7 @@ jobs:
       - name: Install dependencies
         run: dart pub get
 
-      - name: Run tests
-        run: dart test --coverage="coverage"
-        
-      - name: Convert coverage to ICOV
-        run: dart run coverage:format_coverage --lcov --in=coverage --out=coverage.lcov --packages=.packages --report-on=lib
+      - name: Run tests with coverage
+        run: dart run coverage:test_with_coverage
 
       - uses: codecov/codecov-action@v2
