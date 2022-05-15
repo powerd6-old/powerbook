@@ -1,3 +1,4 @@
+import 'package:powerbook/src/models/heading.dart';
 import 'package:powerd6/models.dart';
 import 'package:slugify/slugify.dart';
 
@@ -16,5 +17,12 @@ extension FocusModel on Focus {
       Attributes.wisdom
     ];
     return attributes.where((element) => element.focuses.contains(this)).first;
+  }
+
+  String toHtml() {
+    return '<article id=${getId()}>'
+        '${Heading(title: name).toHtml()}'
+        '${description.lines.map((e) => "<p>$e</p>").join()}'
+        '</article>';
   }
 }

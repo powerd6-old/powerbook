@@ -1,6 +1,6 @@
 name: powerbook
 description: Tooling create powerd6 books, combine them and render them into webpages.
-version: 1.0.4
+version: 1.1.0
 homepage: https://github.com/powerd6/powerbook
 issue_tracker: https://github.com/powerd6/powerbook/issues
 
@@ -10,7 +10,7 @@ environment:
 dependencies: 
   collection: ^1.16.0
   markdown: ^5.0.0
-  powerd6: ^1.0.0
+  powerd6: ^1.2.0
   slugify: ^2.0.0
 
 dev_dependencies:

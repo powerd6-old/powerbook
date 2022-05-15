@@ -19,6 +19,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [1.1.0] - 2022-05-15
+
+### Added
+
+- `toHtml` methods to `Attribute` and `Focus`
+
+### Changed
+
+- use new `Paragraph` `lines`
+
 ## [1.0.4] - 2022-05-09
 
 ### Fixed
