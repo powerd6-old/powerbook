@@ -19,6 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+## [1.1.1] - 2022-06-24
+
+### Fixed
+
+- `Book` can now be merged without affecting the existing object
+
 ## [1.1.0] - 2022-05-15
 
 ### Added
@@ -35,13 +41,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `IndexableMarkdownContent` now returns the correct list of children `Indexables`.
 
-
 ## [1.0.3] - 2022-05-09
 
 ### Fixed
 
 - `IndexableMarkdownContent` can run methods from `Indexable` before `toHtml()` is called.
-
 
 ## [1.0.2] - 2022-05-09
 
@@ -50,18 +54,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `NestedIndexable` to transform a list of `Headings` into a chain of `Indexable`s.
 - `IndexableMarkdownContent`, a clone of `MarkdownContent`, but exposing all `Headings` generated as `Indexable`s.
 
-
 ## [1.0.1] - 2022-05-09
 
 ### Added
 
 - `FocusModel` now provides the associated `Attribute` to the `Focus`
- 
+
 ### Changed
 
 - `Reference` for `Focus` now mentions the associated `Attribute`
 - `MarkdownContent` will now render headers with `Heading`
-
 
 ## [1.0.0] - 2022-05-08
 

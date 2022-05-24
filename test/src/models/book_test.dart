@@ -38,4 +38,28 @@ void main() {
       expect(actual, equals(expected));
     });
   });
+  test("when merging books, the original objects remain the same", () {
+    Book first = Book(
+        heading: Heading(title: "First book"),
+        authors: [Author(name: "John", email: "john@email.com")],
+        chapters: ChapterList(heading: Heading(title: "Chapters"), chapters: [
+          Chapter(heading: Heading(title: "Chapter 1"), contents: [])
+        ]));
+    int firstHashcode = first.hashCode;
+
+    Book second = Book(
+        heading: Heading(title: "Second book"),
+        authors: [Author(name: "Mary", email: "mary@email.com")],
+        chapters: ChapterList(heading: Heading(title: "Chapters"), chapters: [
+          Chapter(heading: Heading(title: "Chapter 1"), contents: []),
+          Chapter(heading: Heading(title: "Chapter 2"), contents: [])
+        ]));
+    int secondHashcode = second.hashCode;
+
+    expect(firstHashcode, isNot(equals(secondHashcode)));
+
+    Book merged = first + second;
+    expect(first.hashCode, equals(firstHashcode));
+    expect(second.hashCode, equals(secondHashcode));
+  });
 }

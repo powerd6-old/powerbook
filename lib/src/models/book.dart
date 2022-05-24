@@ -25,15 +25,27 @@ class Book with Renderable, Indexable {
   }
 
   Book operator +(Book other) {
-    List<Author> mergedAuthors = authors;
+    List<Author> mergedAuthors = [];
+    mergedAuthors.addAll(authors);
     mergedAuthors.addAll(other.authors);
     mergedAuthors = mergedAuthors.toSet().toList();
+
+    ChapterList? mergedAppendices;
+    if (appendices != null) {
+      if (other.appendices != null) {
+        mergedAppendices = appendices! + other.appendices!;
+      } else {
+        mergedAppendices = appendices;
+      }
+    } else {
+      mergedAppendices = other.appendices;
+    }
 
     return Book(
         heading: heading,
         authors: mergedAuthors,
         chapters: chapters + other.chapters,
-        appendices: appendices! + other.appendices!);
+        appendices: mergedAppendices);
   }
 
   @override
